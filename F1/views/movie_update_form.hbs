@@ -1,0 +1,323 @@
+<html>
+<head>
+<title>Movie Details Form</title>
+    <!--<link rel="stylesheet" type="text/css" href="temp.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+    <style>
+#logo{
+    padding-left: 20px;
+    padding-top: 50px;
+}   
+body{
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9)),url(https://wallpaperaccess.com/full/1512225.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background-repeat:repeat;
+    height: 870px;
+}
+.fas fa-arrow-circle-left{
+    font-size: 30px;
+}
+
+.round-button{
+    float: right;
+    font-size: 0.6em;
+}
+
+.backbtn3 {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: rgb(251,37,37);
+    color: #3c4043;
+    display: inline-flex;
+    float: right;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    transition: all 1s;
+    margin-right: -80px;
+    margin-top: 30.5%;
+    
+
+}
+/*.backbtn .text {
+    margin-left: 1px;
+    font-family: Verdana, serif;
+    font-size: 14px;
+    line-height: 54px;
+    display: none;
+}*/
+.backbtn3::before {
+    background-image: url(https://www.iconsdb.com/icons/preview/white/plus-xxl.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+    
+}
+.backbtn2 {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #FF6A00;
+    color: #3c4043;
+    display: inline-flex;
+    float: right;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    transition: all 1s;
+    margin-right: 8%; 
+    margin-top: 0;   
+
+    }
+.backbtn2::before {
+    background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-66-xxl.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+    
+}
+
+
+
+.backbtn {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #FF6A00;
+    color: #3c4043;
+    display: inline-flex;
+    float: right;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    transition: all 1s;
+    margin-right: 20%;
+    margin-top: 1%;
+    
+
+}
+/*.backbtn .text {
+    margin-left: 1px;
+    font-family: Verdana, serif;
+    font-size: 14px;
+    line-height: 54px;
+    display: none;
+}*/
+.backbtn::before {
+    background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-118-xxl.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+    
+}
+
+/*.backbtn:hover {
+    background-position: 10px;
+    width: 150px;
+    border-radius: 90px;
+    text-decoration: none;
+}
+.backbtn:hover .text {
+    display: block;
+}*/
+
+.loginbox{
+    width: 620px;   
+    background:rgba(0, 0, 0, 0.61); 
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    margin-top: 0px;
+    height: 800px;
+
+
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -110px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+#dob{
+    background: transparent;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="button"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #FF6A00;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="button"]:hover
+{
+    cursor: pointer;
+    background: #FF6A00;
+    color: #000;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover
+{
+    color: #75705e;
+}
+#home{
+    color: #000;
+    font-size: 60px;
+    border: none;
+    background: transparent;
+    margin-top: 35px;
+    margin-left: 20px;    
+}   
+.logo{
+    padding: 10px;
+}
+</style> 
+    </head>
+    <body>
+   <div class="logo">
+      <a href="/"><img class="logo"src="https://fontmeme.com/permalink/191224/ea20a6dc7de255ad46c8e77cfa588258.png" alt="netflix-font" border="0"></a>
+    <!--    <a  id="logo" href="/"><img src="https://fontmeme.com/permalink/191223/f1f021f481209004ad0adf41b3f53df1.png" alt="netflix-font" border="0"></a>-->
+    </div>
+    <a class="backbtn" href="/admin/movie"></a>
+    <!--<a class="backbtn2" href="/admin/actor/create"></a>
+    <a class="backbtn3" href="/admin/director/create"></a>-->
+    <div class="loginbox">
+    <!--<img src="https://icon-library.net/images/movie-reel-icon/movie-reel-icon-6.jpg" class="avatar">-->
+        <h1>UPDATE MOVIE - {{movie.mov_name}}</h1>
+        <form  method="post" action="" type="submit" name="movie_detail">            
+          
+            <!--<p>Movie Name (*)</p>
+            <input type="text" name="mov_name" placeholder="Enter Movie Name" value="{{movie.mov_name}}" onkeyup="var start = this.selectionStart;var end = this.selectionEnd;this.value = this.value.toUpperCase();this.setSelectionRange(start, end);">-->
+            <p>Director (*)</p>
+            <input type="text" name="mov_dir" placeholder="Enter Director Name" value="{{movie.mov_dir}}" onkeyup="checkregex1()">
+            <p>Actors (*)</p>
+            <input type="text" name="mov_actor" placeholder="Enter Actors Name"value="{{movie.mov_actor}}" onkeyup="checkregex2()">
+            <p>Language</p>
+            <input type="text" name="mov_language" placeholder="Enter Language" value="{{movie.mov_language}}" onkeyup="checkregex3()">        
+            <p>Release Date</p>
+            <input id="dob" type="date" name="mov_reldate" placeholder="Enter Release Date" value="{{movie.mov_reldate}}">
+            <p>Genre</p>
+            <input type="text" name="mov_genre" placeholder="Enter Genre" value="{{movie.mov_genre}}" onkeyup="checkregex4()">
+            <p>Plot (upto size 800 characters)</p>
+            <input type="text" name="mov_plot" placeholder="Enter Plot" size="800" maxlength="800" value="{{movie.mov_plot}}">
+          <!--  <p>Critic Reviews</p>
+            <input type="text" name="mov_critics" placeholder="Enter Critic Reviews">-->
+            <p>Thumbnail Link</p>
+            <input type="text" name="mov_thumb" placeholder="Enter Thumbnail Link" value="{{movie.mov_thumb}}">
+            <br> 
+            <input type="button" value="UPDATE TO MOVIE COLLECTION" onclick="Update()">
+            <input type="button" value="RESET" onclick="location.href = '{{movie.url}}/update';">
+           <!-- <a href="#">Lost your password?</a><br>
+            <a href="#">Don't have an account?</a> -->
+        </form>        
+    </div>
+    <script>
+   function checkregex1() {
+            if (!movie_detail.mov_dir.value.match(/^[a-zA-Z ]+$/) && movie_detail.mov_dir.value != "") {
+                movie_detail.mov_dir.value = "";
+                movie_detail.mov_dir.focus();
+                alert("Please Enter only alphabets in Director Field..!");
+            }
+        }
+        function checkregex2() {
+            if (!movie_detail.mov_actor.value.match(/^[a-zA-Z ]+$/) && movie_detail.mov_actor.value != "") {
+                movie_detail.mov_actor.value = "";
+                movie_detail.mov_actor.focus();
+                alert("Please Enter only alphabets in Actor Field..!");
+            }
+        }
+        function checkregex3() {
+            if (!movie_detail.mov_language.value.match(/^[a-zA-Z ]+$/) && movie_detail.mov_language.value != "") {
+                movie_detail.mov_language.value = "";
+                movie_detail.mov_language.focus();
+                alert("Please Enter only alphabets in Language Field..!");
+            }
+        }
+        function checkregex4() {
+            if (!movie_detail.mov_genre.value.match(/^[a-zA-Z ]+$/) && movie_detail.mov_genre.value != "") {
+                movie_detail.mov_genre.value = "";
+                movie_detail.mov_genre.focus();
+                alert("Please Enter only alphabets in Genre Field..!");
+            }
+        }
+</script>
+
+    <script>
+        function Update(){
+            var form1=document.forms['movie_detail'];
+            if((document.movie_detail.mov_dir.value=="") || (document.movie_detail.mov_actor.value==""))
+            {
+                alert("Please fill the Mandatory fields (*) ..!");
+            }
+            else 
+            {
+            alert("Successfully Updated To The Database..!");
+                form1.submit();
+                
+            }            
+        }        
+    </script>
+</body>
+</html>

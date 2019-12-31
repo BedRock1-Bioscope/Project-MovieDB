@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>َDirector Form</title>
+   <!-- <link rel="stylesheet" href="style.css">-->
+   <style>
+.logo{
+    overflow: hidden;
+    padding: 20px;
+}
+  body{
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9)),url(http://getwallpapers.com/wallpaper/full/9/3/7/1267865-movie-poster-wallpaper-1920x1080-for-mobile-hd.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background-repeat:repeat;
+    height: 870px;
+}
+}
+.box{
+  width: 600px;
+  padding: 40px;
+  position: absolute;
+  margin-top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #34495e;
+  text-align: center;
+  border: 2px solid #3498db;
+  border-radius: 24px;
+}
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "date"],.box select{
+  border:0;
+  background: none;
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  
+  outline: none;
+  
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"],.box input[type = "date"]{
+    color: white;
+    width: 400px;
+}
+.box select{
+ 
+  color: white;
+  width: 435px;
+  
+}
+.box input[type = "text"],.box input[type = "url"],.box input[type = "date"],.box select{
+  border:0;
+  background: none;
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  
+  outline: none;
+  
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"],.box input[type = "url"],.box input[type = "date"]{
+    color: white;
+    width: 400px;
+}
+.box select{
+  background-color: #030406;
+  opacity: 0.9;
+  
+  color: white;
+  width: 435px;
+  
+}
+.box input[type = "text"]:focus,.box input[type = "url"]:focus,.box input[type = "password"]:focus,.box select:focus{
+  width: 500px;
+  border-color: #2ecc71;
+  
+}
+.box select:focus{
+  width: 500px;
+  border-color: #2ecc71;
+  color: white;
+  background-color: #030406;
+}
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+.box input[type = "button"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "button"]:hover{
+  background: #2ecc71;
+}
+.button {
+  background-color: rgb(45, 84, 212); 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button2 {
+  border-radius: 4px;
+}
+.backbtn2 {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #FF6A00;
+    color: #3c4043;
+    display: inline-flex;
+    float: right;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    transition: all 1s;
+    margin-right: 8%; 
+    margin-top: 0;   
+
+    }
+.backbtn2::before {
+    background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-66-xxl.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+    
+}
+::placeholder {
+  color:white
+}
+h1{
+  margin: 0;
+  margin-left: 200px;
+  padding: 0 0px 20px;
+  text-align:center;
+  font-size: 60px;
+  font-family: 'Courier New', Courier, monospace;
+}
+   </style>
+  </head>
+  <body>
+<!--LOGO placement-->
+    <div class="logo">
+       <a href="/"><img src="https://fontmeme.com/permalink/191224/ea20a6dc7de255ad46c8e77cfa588258.png" alt="netflix-font" border="0"></a>
+    <!--    <a  id="logo" href="/"><img src="https://fontmeme.com/permalink/191223/f1f021f481209004ad0adf41b3f53df1.png" alt="netflix-font" border="0"></a>-->
+    </div>
+   <a class="backbtn2" href="/"></a>
+<form class="box" action="" method="post" onsubmit="return validateForm()">
+  <h1 style="color:#FF6A00">UPDATE DIRECTOR - {{director.dir_name}}</h1>
+  <!--<input type="text" name="dir_name" placeholder="" value="{{director.dir_name}}" required='true' maxlength="25" onkeyup="var start = this.selectionStart;var end = this.selectionEnd;this.value = this.value.toUpperCase();this.setSelectionRange(start, end);">-->
+  <input placeholder="DOB*" name="dir_dob" min="1700-01-01" max="2018-12-31" class="textbox-n" type="text" onfocus="(this.type='date')"  id="datefield" value={{director.dir_dob}}>
+  <select name="dir_nat" value="{{director.dir_nat}}" required='true'>
+  <option value="{{director.dir_nat}}">{{director.dir_nat}} </option>
+  <option value="afghan">Afghan</option>
+  <option value="albanian">Albanian</option>
+  <option value="algerian">Algerian</option>
+  <option value="american">American</option>
+  <option value="andorran">Andorran</option>
+  <option value="angolan">Angolan</option>
+  <option value="antiguans">Antiguans</option>
+  <option value="argentinean">Argentinean</option>
+  <option value="armenian">Armenian</option>
+  <option value="australian">Australian</option>
+  <option value="austrian">Austrian</option>
+  <option value="azerbaijani">Azerbaijani</option>
+  <option value="bahamian">Bahamian</option>
+  <option value="bahraini">Bahraini</option>
+  <option value="bangladeshi">Bangladeshi</option>
+  <option value="barbadian">Barbadian</option>
+  <option value="barbudans">Barbudans</option>
+  <option value="batswana">Batswana</option>
+  <option value="belarusian">Belarusian</option>
+  <option value="belgian">Belgian</option>
+  <option value="belizean">Belizean</option>
+  <option value="beninese">Beninese</option>
+  <option value="bhutanese">Bhutanese</option>
+  <option value="bolivian">Bolivian</option>
+  <option value="bosnian">Bosnian</option>
+  <option value="brazilian">Brazilian</option>
+  <option value="british">British</option>
+  <option value="bruneian">Bruneian</option>
+  <option value="bulgarian">Bulgarian</option>
+  <option value="burkinabe">Burkinabe</option>
+  <option value="burmese">Burmese</option>
+  <option value="burundian">Burundian</option>
+  <option value="cambodian">Cambodian</option>
+  <option value="cameroonian">Cameroonian</option>
+  <option value="canadian">Canadian</option>
+  <option value="cape verdean">Cape Verdean</option>
+  <option value="central african">Central African</option>
+  <option value="chadian">Chadian</option>
+  <option value="chilean">Chilean</option>
+  <option value="chinese">Chinese</option>
+  <option value="colombian">Colombian</option>
+  <option value="comoran">Comoran</option>
+  <option value="congolese">Congolese</option>
+  <option value="costa rican">Costa Rican</option>
+  <option value="croatian">Croatian</option>
+  <option value="cuban">Cuban</option>
+  <option value="cypriot">Cypriot</option>
+  <option value="czech">Czech</option>
+  <option value="danish">Danish</option>
+  <option value="djibouti">Djibouti</option>
+  <option value="dominican">Dominican</option>
+  <option value="dutch">Dutch</option>
+  <option value="east timorese">East Timorese</option>
+  <option value="ecuadorean">Ecuadorean</option>
+  <option value="egyptian">Egyptian</option>
+  <option value="emirian">Emirian</option>
+  <option value="equatorial guinean">Equatorial Guinean</option>
+  <option value="eritrean">Eritrean</option>
+  <option value="estonian">Estonian</option>
+  <option value="ethiopian">Ethiopian</option>
+  <option value="fijian">Fijian</option>
+  <option value="filipino">Filipino</option>
+  <option value="finnish">Finnish</option>
+  <option value="french">French</option>
+  <option value="gabonese">Gabonese</option>
+  <option value="gambian">Gambian</option>
+  <option value="georgian">Georgian</option>
+  <option value="german">German</option>
+  <option value="ghanaian">Ghanaian</option>
+  <option value="greek">Greek</option>
+  <option value="grenadian">Grenadian</option>
+  <option value="guatemalan">Guatemalan</option>
+  <option value="guinea-bissauan">Guinea-Bissauan</option>
+  <option value="guinean">Guinean</option>
+  <option value="guyanese">Guyanese</option>
+  <option value="haitian">Haitian</option>
+  <option value="herzegovinian">Herzegovinian</option>
+  <option value="honduran">Honduran</option>
+  <option value="hungarian">Hungarian</option>
+  <option value="icelander">Icelander</option>
+  <option value="indian">Indian</option>
+  <option value="indonesian">Indonesian</option>
+  <option value="iranian">Iranian</option>
+  <option value="iraqi">Iraqi</option>
+  <option value="irish">Irish</option>
+  <option value="israeli">Israeli</option>
+  <option value="italian">Italian</option>
+  <option value="ivorian">Ivorian</option>
+  <option value="jamaican">Jamaican</option>
+  <option value="japanese">Japanese</option>
+  <option value="jordanian">Jordanian</option>
+  <option value="kazakhstani">Kazakhstani</option>
+  <option value="kenyan">Kenyan</option>
+  <option value="kittian and nevisian">Kittian and Nevisian</option>
+  <option value="kuwaiti">Kuwaiti</option>
+  <option value="kyrgyz">Kyrgyz</option>
+  <option value="laotian">Laotian</option>
+  <option value="latvian">Latvian</option>
+  <option value="lebanese">Lebanese</option>
+  <option value="liberian">Liberian</option>
+  <option value="libyan">Libyan</option>
+  <option value="liechtensteiner">Liechtensteiner</option>
+  <option value="lithuanian">Lithuanian</option>
+  <option value="luxembourger">Luxembourger</option>
+  <option value="macedonian">Macedonian</option>
+  <option value="malagasy">Malagasy</option>
+  <option value="malawian">Malawian</option>
+  <option value="malaysian">Malaysian</option>
+  <option value="maldivan">Maldivan</option>
+  <option value="malian">Malian</option>
+  <option value="maltese">Maltese</option>
+  <option value="marshallese">Marshallese</option>
+  <option value="mauritanian">Mauritanian</option>
+  <option value="mauritian">Mauritian</option>
+  <option value="mexican">Mexican</option>
+  <option value="micronesian">Micronesian</option>
+  <option value="moldovan">Moldovan</option>
+  <option value="monacan">Monacan</option>
+  <option value="mongolian">Mongolian</option>
+  <option value="moroccan">Moroccan</option>
+  <option value="mosotho">Mosotho</option>
+  <option value="motswana">Motswana</option>
+  <option value="mozambican">Mozambican</option>
+  <option value="namibian">Namibian</option>
+  <option value="nauruan">Nauruan</option>
+  <option value="nepalese">Nepalese</option>
+  <option value="new zealander">New Zealander</option>
+  <option value="ni-vanuatu">Ni-Vanuatu</option>
+  <option value="nicaraguan">Nicaraguan</option>
+  <option value="nigerien">Nigerien</option>
+  <option value="north korean">North Korean</option>
+  <option value="northern irish">Northern Irish</option>
+  <option value="norwegian">Norwegian</option>
+  <option value="omani">Omani</option>
+  <option value="pakistani">Pakistani</option>
+  <option value="palauan">Palauan</option>
+  <option value="panamanian">Panamanian</option>
+  <option value="papua new guinean">Papua New Guinean</option>
+  <option value="paraguayan">Paraguayan</option>
+  <option value="peruvian">Peruvian</option>
+  <option value="polish">Polish</option>
+  <option value="portuguese">Portuguese</option>
+  <option value="qatari">Qatari</option>
+  <option value="romanian">Romanian</option>
+  <option value="russian">Russian</option>
+  <option value="rwandan">Rwandan</option>
+  <option value="saint lucian">Saint Lucian</option>
+  <option value="salvadoran">Salvadoran</option>
+  <option value="samoan">Samoan</option>
+  <option value="san marinese">San Marinese</option>
+  <option value="sao tomean">Sao Tomean</option>
+  <option value="saudi">Saudi</option>
+  <option value="scottish">Scottish</option>
+  <option value="senegalese">Senegalese</option>
+  <option value="serbian">Serbian</option>
+  <option value="seychellois">Seychellois</option>
+  <option value="sierra leonean">Sierra Leonean</option>
+  <option value="singaporean">Singaporean</option>
+  <option value="slovakian">Slovakian</option>
+  <option value="slovenian">Slovenian</option>
+  <option value="solomon islander">Solomon Islander</option>
+  <option value="somali">Somali</option>
+  <option value="south african">South African</option>
+  <option value="south korean">South Korean</option>
+  <option value="spanish">Spanish</option>
+  <option value="sri lankan">Sri Lankan</option>
+  <option value="sudanese">Sudanese</option>
+  <option value="surinamer">Surinamer</option>
+  <option value="swazi">Swazi</option>
+  <option value="swedish">Swedish</option>
+  <option value="swiss">Swiss</option>
+  <option value="syrian">Syrian</option>
+  <option value="taiwanese">Taiwanese</option>
+  <option value="tajik">Tajik</option>
+  <option value="tanzanian">Tanzanian</option>
+  <option value="thai">Thai</option>
+  <option value="togolese">Togolese</option>
+  <option value="tongan">Tongan</option>
+  <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+  <option value="tunisian">Tunisian</option>
+  <option value="turkish">Turkish</option>
+  <option value="tuvaluan">Tuvaluan</option>
+  <option value="ugandan">Ugandan</option>
+  <option value="ukrainian">Ukrainian</option>
+  <option value="uruguayan">Uruguayan</option>
+  <option value="uzbekistani">Uzbekistani</option>
+  <option value="venezuelan">Venezuelan</option>
+  <option value="vietnamese">Vietnamese</option>
+  <option value="welsh">Welsh</option>
+  <option value="yemenite">Yemenite</option>
+  <option value="zambian">Zambian</option>
+  <option value="zimbabwean">Zimbabwean</option>
+</select>
+  <input type="text" name="dir_tmark" placeholder="Trade Mark" value="{{director.dir_tmark}}" maxlength="30">
+  <!--<input type="text" name="dir_nat" placeholder="" value="{{director.dir_nat}}">-->
+  <input type="text" name="dir_awards" placeholder="Awards" value="{{director.dir_awards}}" maxlength="25">
+  <input type="url" name="dir_thumb" placeholder="Thumbnail Link" value="{{director.dir_thumb}}" maxlength="100"  pattern="https?://.+" title="Include http://">
+  <input type="submit" value="UPDATE TO DIRECTOR COLLECTION">
+  <input type="button" value="RESET" onclick="location.href='{{director.url}}/update';">
+
+</form>
+<script>
+function validateForm() {
+  alert("Successfully Movie updated To The Database!");
+}
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datefield").setAttribute("max", today);
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 200px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  margin-top: 40px;
+}
+.card:hover {
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+.container {
+  padding-bottom: 3px;
+}
+
+body{
+   background-image:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9)),url(https://wallpaperaccess.com/full/1512225.jpg);
+   background-repeat: repeat;
+   background-size: cover;
+   background-position: center;
+   height: fit-content;
+
+}
+.column {
+  float: left;
+  width: 20%;
+  padding: 2px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  background-color: rgb(45, 84, 212); 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button2 {
+  border-radius: 4px;
+}
+.backbtn2 {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #FF6A00;
+    color: #3c4043;
+    display: inline-flex;
+    float: right;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    transition: all 1s;
+    margin-right: 8%; 
+    margin-top: 8%;   
+
+    }
+.backbtn2::before {
+    background-image: url(https://www.iconsdb.com/icons/preview/white/arrow-118-xxl.png);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+}
+
+/* back butoon */
+
+.backbutton {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #FF6A00;
+    color: #3c4043;
+    display: inline-flex;
+    float: right;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    transition: all 1s;
+    margin-right: 3%; 
+    margin-top: 8%;   
+
+    }
+.backbutton::before {
+    background-image: url( https://www.iconsdb.com/icons/preview/white/plus-xxl.png);
+   
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    content: '';
+    min-width: 56px;
+    display: block;
+}
+
+
+
+
+
+/*    <div class="logo">
+      <a href="https://fontmeme.com/netflix-font/"><img class="logo"src="https://fontmeme.com/permalink/191224/ea20a6dc7de255ad46c8e77cfa588258.png" alt="netflix-font" border="0"></a>
+    <!--    <a  id="logo" href="/"><img src="https://fontmeme.com/permalink/191223/f1f021f481209004ad0adf41b3f53df1.png" alt="netflix-font" border="0"></a>-->
+    </div>*/
+
+</style>
+<a class="backbtn2" href="/"></a>
+ <a class="backbutton" href="/admin/movie/create"></a>
+<div class="logo">
+  <a href="/"><img src="https://fontmeme.com/permalink/191224/ea20a6dc7de255ad46c8e77cfa588258.png" alt="netflix-font" border="0"></a>
+         <!--<a href="/"><img src="https://fontmeme.com/permalink/191224/ea20a6dc7de255ad46c8e77cfa588258.png" alt="netflix-font" border="0"></a>
+      <a  id="logo" href="/"><img src="https://fontmeme.com/permalink/191223/f1f021f481209004ad0adf41b3f53df1.png" alt="netflix-font" border="0"></a>-->
+    </div>
+<p ><center style="font-size: 60px; color:rgb(179, 66, 1); margin-left:10%;">{{title}}</center></p><br>
+<!--<p>
+    <form  name="form" method="GET" class="form-inline">
+        <div>
+            <input type="text"  name="search" placeholder="Movie search... " class=" ">
+            <input type="submit" onclick="javascript: form.action='/admin/movie';" value="Movie" class="btn search" >
+            <input type="submit" onclick="javascript: form.action='/admin/director';" value="Director" class="btn search" >
+            <input type="submit" onclick="javascript: form.action='/admin/actor';" value="Actor" class="btn search" >
+        </div>
+    </form>-->
+    </p>
+    <ul>
+      
+        
+        {{# each movie_list }}
+        <div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+    
+    <a href="{{this.url}}">
+  <img  src="{{this.mov_thumb}}" alt="" onerror="this.src='https://www.urbannewsdigest.in/wp-content/themes/bigc/assets/css/images/no-thumbnail.png'" width="200" height="250"></a> 
+          <br>
+          <center><p style="color:black"><b>{{ this.mov_name }}</b></p></center>
+          <center><a button class="button button2" href="{{this.url}}">More Info</a></button></center>
+            </div>
+            </div>
+            </div>
+        {{/each}}
+    </ul>

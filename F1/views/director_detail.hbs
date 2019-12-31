@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <style>
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9)),url(http://getwallpapers.com/wallpaper/full/9/3/7/1267865-movie-poster-wallpaper-1920x1080-for-mobile-hd.jpg);
+        /*background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),url('images/background.jpg');*/
+    background-position:center;
+    background-size: cover;
+}
+.logo{
+    overflow: hidden;
+ /* border-bottom-style: solid;
+  border-bottom-color: #FF6A00;
+  border-width: thin;
+  margin-bottom: 50px;
+  margin-top: 30px;*/
+  padding: 20px;
+}
+ 
+.movie-details{
+    margin: 7% 4%;
+}
+.header{
+    height: 10%;
+}
+.header-btn{
+    text-decoration: none !important;
+    border-radius: 30px;
+    padding: 7px 20px;
+    float: right;
+    margin-top: 15px;
+    color: #fff !important;
+    background: #107afd;
+    font-weight: 600;
+}
+
+.left-box{
+    color: #fff;
+    margin: 15px 0;
+    padding: 20px;
+    margin-top: 10px;
+}
+.left-box a,button{
+    text-decoration: none !important;
+    border-radius: 30px;
+    padding: 7px 10px;
+    margin-top: 35px;
+    color: #fff !important;
+    background: #107afd;
+    font-weight: 600 ;
+    display: inline-block;
+    margin-right: 10px;     
+}
+.delete-btn{
+    /*border: 1px solid #fff !important;*/
+    background: #107afd ;
+    border: none;
+}
+.fa{
+    margin: 0 5px; 
+}
+.movie-img{
+    height: 450px;
+    width: 350px;
+    box-shadow: -4px 4px 5px 0 #000;
+    float: right;
+    margin-top: 50px;
+}
+
+</style>
+
+</head>
+<body>
+     <div class="logo">
+      <a href="/"><img class="logo"src="https://fontmeme.com/permalink/191224/ea20a6dc7de255ad46c8e77cfa588258.png" alt="netflix-font" border="0"></a>
+    <!--    <a  id="logo" href="/"><img src="https://fontmeme.com/permalink/191223/f1f021f481209004ad0adf41b3f53df1.png" alt="netflix-font" border="0"></a>-->
+    </div>
+
+<div class="container director-details">
+    <div class="row">
+        <div class="col-md-6 left-box">
+           <h1>{{director.dir_name}}</h1><br><br>
+           <h4>Name:</h4>{{director.dir_name}}<br><br>
+           <h4>Date of Birth:</h4>{{director.dir_dob}}<br><br>
+           <h4>Trade Mark:</h4>{{director.dir_tmark}}<br><br>
+           <h4>Nationality:</h4>{{director.dir_nat}}<br><br>
+           <h4>Awards:</h4>{{director.dir_awards}}<br><br>
+         <!--  <h4>Thumbnail:</h4>{{director.dir_thumb}}<br><br><br>-->
+           
+           <a href="{{director.url}}/update"><i class="fa fa-pencil-square-o"></i>Update</a>
+       <!--    <form action="{{director.url}}/delete" method="post">
+           <input class="form-control" id="id" type="hidden" name="id" required="true" , value={{director._id}}> </input>
+           <button type="submit" class="delete-btn" onclick="delete()"><i class="fa fa-trash"></i> delete</button>
+           </form>
+           <br>
+           <br>
+            
+        </div>
+        <div class="col-md-6">
+            <img src="{{director.dir_thumb}}" onerror=this.src="https://image.shutterstock.com/image-vector/vector-graphic-no-thumbnail-symbol-260nw-1391095985.jpg" class="movie-img">
+        </div>
+    </div>
+</div>
+<script>
+function delete(){
+    alert("movie deleted successfully..!");
+}
+</script>
+-->
+
+
+
+<form action="{{director.url}}/delete" method="post" name="deleteform">
+           <input class="form-control" id="id" type="hidden" name="id" required="true" , value={{director._id}}> </input>
+           <button type="button" class="delete-btn" onclick="myConfirm()"><i class="fa fa-trash"></i> delete</button>
+           </form>
+           <br>
+           <br>
+            
+        </div>
+        <div class="col-md-6">
+            <img src="{{director.dir_thumb}}" onerror=this.src="https://image.shutterstock.com/image-vector/vector-graphic-no-thumbnail-symbol-260nw-1391095985.jpg" class="movie-img">
+        </div>
+    </div>
+</div>
+<script>
+function myConfirm() {
+    
+
+  var result = confirm("Do You Want To Delete {{director.dir_name}} ?");
+    form1=document.forms['deleteform'];
+  if (result==true) {
+      form1.submit();
+      alert("{{movie.mov_name}} is deleted successfully!");
+    //return true;
+  } else {
+      //alert("operation rollbacked uccessfully!");
+   //return false;
+  }
+}
+</script>
+</body>
+</html>

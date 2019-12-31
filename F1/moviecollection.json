@@ -1,0 +1,20 @@
+{"_id":{"$oid":"5e0460830523e74a4831990b"},"mov_name":"Asuran","mov_dir":"Vetrimaran","mov_actor":"Dhanush, Manju Warrior","mov_reldate":"2019-10-10","mov_genre":"Action , Thriller","mov_plot":"At the start, a man and a boy are trekking through a river in a rural village, carrying homemade bombs and hiding from the police. In another part of the village, a woman, man and a young child are also hiding from the police. The movie then moves into a flashback.","mov_thumb":"https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Asuran_movie_poster.jpg/220px-Asuran_movie_poster.jpg","__v":{"$numberInt":"0"},"mov_language":"Tamil"}
+{"_id":{"$oid":"5e046355d0517c7b847f75da"},"mov_name":"Avatar","mov_dir":"James Cameron","mov_actor":"Sam Worthington Zoe Saldana","mov_reldate":"2009-12-10","mov_genre":"Fantasy","mov_plot":"In 2154, humans have depleted Earth's natural resources, leading to a severe energy crisis. The Resources Development Administration (RDA for short) mines for a valuable mineral — unobtanium — on Pandora, a densely forested habitable moon orbiting the gas giant Polyphemus in the Alpha Centauri star system.[10] Pandora, whose atmosphere is poisonous to humans, is inhabited by the Na'vi, a species of 10-foot tall (3.0 m), blue-skinned, sapient humanoids[34] that live in harmony with nature and worship a mother goddess named Eywa.","mov_thumb":"https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Avatar-Teaser-Poster.jpg/220px-Avatar-Teaser-Poster.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e0464655a661116e48e22f3"},"mov_name":"Avatar","mov_dir":"James Cameron","mov_actor":"rbrbtrb","mov_reldate":"2019-12-16","mov_genre":"Fantasy","mov_plot":"qwrrwf","mov_thumb":"","__v":{"$numberInt":"0"},"mov_language":"English"}
+
+
+
+
+
+{
+    "_id":"5e0460830523e74a4831990b",
+    "mov_name":"Asuran",
+    "mov_dir":"Vetrimaran",
+    "mov_actor":"Dhanush, Manju Warrior",
+    "mov_reldate":"2019-10-10",
+    "mov_genre":"Action , Thriller",
+    "mov_language":"Tamil",
+    "mov_plot":"At the start, a man and a boy are trekking through a river in a rural village, carrying homemade bombs and hiding from the police. In another part of the village, a woman, man and a young child are also hiding from the police. The movie then moves into a flashback.",
+    "mov_thumb":"https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Asuran_movie_poster.jpg/220px-Asuran_movie_poster.jpg","__v":0,
+}
+
