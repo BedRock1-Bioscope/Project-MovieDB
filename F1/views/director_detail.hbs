@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,17 +11,12 @@
     <style>
 body{
     background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.9)),url(http://getwallpapers.com/wallpaper/full/9/3/7/1267865-movie-poster-wallpaper-1920x1080-for-mobile-hd.jpg);
-        /*background-image:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),url('images/background.jpg');*/
+
     background-position:center;
     background-size: cover;
 }
 .logo{
     overflow: hidden;
- /* border-bottom-style: solid;
-  border-bottom-color: #FF6A00;
-  border-width: thin;
-  margin-bottom: 50px;
-  margin-top: 30px;*/
   padding: 20px;
 }
  
@@ -59,7 +55,7 @@ body{
     margin-right: 10px;     
 }
 .delete-btn{
-    /*border: 1px solid #fff !important;*/
+    
     background: #107afd ;
     border: none;
 }
@@ -95,25 +91,6 @@ body{
          <!--  <h4>Thumbnail:</h4>{{director.dir_thumb}}<br><br><br>-->
            
            <a href="{{director.url}}/update"><i class="fa fa-pencil-square-o"></i>Update</a>
-       <!--    <form action="{{director.url}}/delete" method="post">
-           <input class="form-control" id="id" type="hidden" name="id" required="true" , value={{director._id}}> </input>
-           <button type="submit" class="delete-btn" onclick="delete()"><i class="fa fa-trash"></i> delete</button>
-           </form>
-           <br>
-           <br>
-            
-        </div>
-        <div class="col-md-6">
-            <img src="{{director.dir_thumb}}" onerror=this.src="https://image.shutterstock.com/image-vector/vector-graphic-no-thumbnail-symbol-260nw-1391095985.jpg" class="movie-img">
-        </div>
-    </div>
-</div>
-<script>
-function delete(){
-    alert("movie deleted successfully..!");
-}
-</script>
--->
 
 
 
@@ -141,8 +118,7 @@ function myConfirm() {
       alert("{{movie.mov_name}} is deleted successfully!");
     //return true;
   } else {
-      //alert("operation rollbacked uccessfully!");
-   //return false;
+
   }
 }
 </script>
