@@ -148,34 +148,7 @@ exports.movie_list = function(req, res, next) {
 
 
 
-/*//INDEX - show all campgrounds
-router.get("/", function(req, res){
-  var noMatch = null;
-  if(req.query.search) {
-      const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-      // Get all campgrounds from DB
-      Campground.find({name: regex}, function(err, allCampgrounds){
-         if(err){
-             console.log(err);
-         } else {
-            if(allCampgrounds.length < 1) {
-                noMatch = "No campgrounds match that query, please try again.";
-            }
-            res.render("campgrounds/index",{campgrounds:allCampgrounds, noMatch: noMatch});
-         }
-      });
-  } else {
-      // Get all campgrounds from DB
-      Campground.find({}, function(err, allCampgrounds){
-         if(err){
-             console.log(err);
-         } else {
-            res.render("campgrounds/index",{campgrounds:allCampgrounds, noMatch: noMatch});
-         }
-      });
-  }
-});
-*/
+
 
 
 
@@ -201,39 +174,6 @@ exports.movie_update_get = function(req, res, next) {
 
 };
 
-// Handle movie create on POST.
-/*exports.movie_create_post = [
-  (req, res, next) => {
-
-
-      // Create a Movie object with escaped and trimmed data.
-      var movie = new Movie(
-        {
-          mov_id: req.body.mov_id,
-          mov_name:req.body.mov_name,  
-          mov_dir: req.body.mov_dir,
-          mov_actor: req.body.mov_actor,
-          mov_cast: req.body.mov_cast,
-          mov_reldate: req.body.mov_reldate,
-          mov_genre: req.body.mov_genre,
-          mov_plot: req.body.mov_plot,
-          mov_critics: req.body.mov_critics,
-          mov_thumb: req.body.mov_thumb
-          //awards: String,
-          //poster: String,
-          //rating: Number
-        }
-      );
-
-          // Data from form is valid. Save movie.
-          movie.save(function (err) {
-              if (err) { return next(err); }
-                 // Successful - redirect to new movie record.
-                 res.send("done");
-                 //res.redirect(movie.url);
-              });
-      }
-];*/
 
 
 
@@ -263,15 +203,7 @@ exports.movie_update_post = [
             );
             
 
-     /* if (!errors.isEmpty()) {
-          // There are errors. Render form again with sanitized values/error messages.
-          async.parallel(function(err, results) {
-              if (err) { return next(err); }
-              res.render('movie_form', { title: 'Update Movie', movie: movie});
-          });
-          return;
-      }
-      else {*/
+     
           // Data from form is valid. Update the record.
           Movie.findByIdAndUpdate(req.params.id, movie, {}, function (err,themovie) {
               if (err) { return next(err); }
