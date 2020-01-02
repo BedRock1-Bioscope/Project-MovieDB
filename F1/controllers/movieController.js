@@ -257,3 +257,5 @@ exports.movie_delete_post = function(req, res, next) {
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
+
+//END OF MOVIE CONTROLLER
