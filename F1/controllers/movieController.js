@@ -1,4 +1,4 @@
-//MOVIE CONTROLLER
+//MOVIE CONTROLLERS
 var Movie = require('../models/movie');
 var Actor = require('../models/actor');
 var Director = require('../models/director');
