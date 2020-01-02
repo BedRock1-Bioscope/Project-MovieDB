@@ -54,6 +54,7 @@ exports.movie_detail = function(req, res, next) {
 };
 
 // Handle book create on POST.
+// Handle book create on POST.
 //exports.movie_create_post = function(req, res) {
 exports.movie_create_post=[
   (req, res,next)=>{
