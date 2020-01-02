@@ -30,35 +30,7 @@ exports.director_detail = function(req, res, next) {
   
   };
     
-
-/*Handle director create on POST.
-exports.director_create_post = function(req, res) {
-    var director = new Director(
-        {
-            dir_name: req.body.dir_name,
-            dir_id: req.body.dir_id,
-            dir_dob: req.body.dir_dob,
-            dir_tmark: req.body.dir_tmark,
-            dir_nat: req.body.dir_nat,
-            dir_awards: req.body.dir_awards,
-            dir_thumb: req.body.dir_thumb
-        }
-      );
-    director.save()
-        .then(item => {
-            res.render("director_form");
-        })
-        .catch(err => {
-            res.status(400).send("Unable to save to database");
-        });
-};
-*/
-
-
-
-
 // Handle book create on POST.
-//exports.movie_create_post = function(req, res) {
   exports.director_create_post = [
   (req, res, next) => {
         
@@ -71,34 +43,13 @@ exports.director_create_post = function(req, res) {
             dir_nat: req.body.dir_nat,
             dir_awards: req.body.dir_awards,
             dir_thumb: req.body.dir_thumb
-          //awards: String,
-          //poster: String,
-          //rating: Number
-        }
       );
-
-
-      
-   /* movie.save()
-        .then(item => {
-         //  res.send("Movie saved to database"); 
-           res.render('movie_form');
-        })
-        .catch(err => {
-            res.status(400).send("Unable to save to database");
-        });*/
-        
 
   // Data from form is valid. Save book.
   
       director.save(function (err) {
       if (err) { 
-        //return next(err); 
-        /*return res.status(500).send({
-          success: false,
-          message: 'movie already exist!'
-         
-        });*/
+
         res.render('director_form', { title: 'Director already Exists!'});
       } else{
         res.render('director_form', { title: 'DIRECTOR SAVED'});
@@ -186,16 +137,7 @@ exports.director_list = function(req, res, next) {
                   _id:req.params.id
                 }
               );
-  
-        /*if (!errors.isEmpty()) {
-            // There are errors. Render form again with sanitized values/error messages.
-            async.parallel(function(err, results) {
-                if (err) { return next(err); }
-                res.render('director_form', { title: 'Update Director', director: director});
-            });
-            return;
-        }
-        else {*/
+
             // Data from form is valid. Update the record.
             Director.findByIdAndUpdate(req.params.id, director, {}, function (err,thedirector) {
                 if (err) { return next(err); }
@@ -245,7 +187,7 @@ exports.director_list = function(req, res, next) {
     });
   
   };
-
+//function escapeRegex
   function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
   };
