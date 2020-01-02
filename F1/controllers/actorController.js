@@ -82,35 +82,7 @@ exports.actor_list = function(req, res, next) {
   }
   
 }; 
-  /*  if(req.query.search) {
-        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-        Actor.find({act_name:regex}, 'act_name act_thumb ')
-        //.populate('mov_dir')
-        .exec(function (err, list_actor) {
-          if (err) {return next(err)} 
-          else {
-                // Successful, so render
-                res.render('actor_list', { title: 'Actor List', actor_list:  list_actor});
-            }
-        });
-      } else {
-
-    Actor.find({}, 'act_name act_thumb act_dob')
-      //.populate('act_dir')
-      .exec(function (err, list_actor) {
-        if (err) {return next(err)} 
-        else {
-              // Successful, so render
-              res.render('actor_list', { title: 'Actor List', actor_list:  list_actor});
-          }
-      });
-    }
-  
-  };
-*/
-
-
-  // Display detail page for a specific actor.
+ // Display detail page for a specific actor.
 exports.actor_detail = function(req, res, next) {
  
     async.parallel({
@@ -169,22 +141,9 @@ exports.actor_detail = function(req, res, next) {
                   act_nat: req.body.act_nat,
                   act_awards: req.body.act_awards,
                   act_thumb: req.body.act_thumb,
-                  //awards: String,
-                  //poster: String,
-                  //rating: Number
                   _id:req.params.id
                 }
               );
-  
-      /*  if (!errors.isEmpty()) {
-            // There are errors. Render form again with sanitized values/error messages.
-            async.parallel(function(err, results) {
-                if (err) { return next(err); }
-                res.render('actor_form', { title: 'Update Actor', actor: actor});
-            });
-            return;
-        }
-        else {  */
             // Data from form is valid. Update the record.
             Actor.findByIdAndUpdate(req.params.id, actor, {}, function (err,theactor) {
                 if (err) { return next(err); }
