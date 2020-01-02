@@ -1,3 +1,4 @@
+//director controller
 var Director = require('../models/director');
 
 var async = require ('async');
