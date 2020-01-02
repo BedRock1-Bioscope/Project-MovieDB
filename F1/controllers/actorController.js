@@ -30,7 +30,53 @@ exports.actor_detail = function(req, res, next) {
     
 
 // Handle actor create on POST.
-exports.actor_create_post = function(req, res) {
+
+
+exports.actor_create_post = [
+  (req, res, next) => {
+        
+    var actor = new Actor(
+        {
+          act_name: req.body.act_name,
+          act_dob: req.body.act_dob,
+          act_abt: req.body.act_abt,
+          act_nat: req.body.act_nat,
+          act_awards: req.body.act_awards,
+          act_thumb: req.body.act_thumb
+        }
+      );
+   /* movie.save()
+        .then(item => {
+         //  res.send("Movie saved to database"); 
+           res.render('movie_form');
+        })
+        .catch(err => {
+            res.status(400).send("Unable to save to database");
+        });*/
+        
+
+  // Data from form is valid. Save book.
+  
+      actor.save(function (err) {
+      if (err) { 
+        //return next(err); 
+        /*return res.status(500).send({
+          success: false,
+          message: 'movie already exist!'
+         
+        });*/
+        res.render('actor_form', { title: 'Actor already Exists!'});
+      } else{
+        res.render('actor_form', { title: 'ACTOR SAVED'});
+      }
+         /*   res.send("Movie saved to database"); */
+           
+        });
+}
+  
+  ];
+
+/*exports.actor_create_post = function(req, res) {
     var actor = new Actor(
         {
             act_name: req.body.act_name,
@@ -43,13 +89,13 @@ exports.actor_create_post = function(req, res) {
       );
     actor.save()
         .then(item => {
-          /*  res.send("Actor saved to database");  */
+          //  res.send("Actor saved to database");  
           res.render('actor_form');
         })
         .catch(err => {
             res.status(400).send("Unable to save to database");
         });
-};
+}; */
 
 // Display list of all actor.
 exports.actor_list = function(req, res, next) {
